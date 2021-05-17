@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E5EE8E3C2652B88400D167F8 /* twittercloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E3B2652B88400D167F8 /* twittercloneApp.swift */; };
+		E5EE8E3E2652B88400D167F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E3D2652B88400D167F8 /* ContentView.swift */; };
+		E5EE8E402652B88400D167F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5EE8E3F2652B88400D167F8 /* Assets.xcassets */; };
+		E5EE8E432652B88400D167F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5EE8E422652B88400D167F8 /* Preview Assets.xcassets */; };
+		E5EE8E4E2652B88500D167F8 /* twittercloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E4D2652B88400D167F8 /* twittercloneTests.swift */; };
+		E5EE8E592652B88500D167F8 /* twittercloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E582652B88500D167F8 /* twittercloneUITests.swift */; };
+		E5EE8E6B2652C12500D167F8 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E6A2652C12500D167F8 /* FeedView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E5EE8E4A2652B88400D167F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5EE8E302652B88400D167F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5EE8E372652B88400D167F8;
+			remoteInfo = twitterclone;
+		};
+		E5EE8E552652B88500D167F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5EE8E302652B88400D167F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5EE8E372652B88400D167F8;
+			remoteInfo = twitterclone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E5EE8E382652B88400D167F8 /* twitterclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5EE8E3B2652B88400D167F8 /* twittercloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittercloneApp.swift; sourceTree = "<group>"; };
+		E5EE8E3D2652B88400D167F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E5EE8E3F2652B88400D167F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5EE8E422652B88400D167F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E5EE8E442652B88400D167F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5EE8E492652B88400D167F8 /* twittercloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twittercloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5EE8E4D2652B88400D167F8 /* twittercloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittercloneTests.swift; sourceTree = "<group>"; };
+		E5EE8E4F2652B88500D167F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5EE8E542652B88500D167F8 /* twittercloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twittercloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5EE8E582652B88500D167F8 /* twittercloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittercloneUITests.swift; sourceTree = "<group>"; };
+		E5EE8E5A2652B88500D167F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5EE8E6A2652C12500D167F8 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedView.swift; path = ../../../FeedView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5EE8E352652B88400D167F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5EE8E462652B88400D167F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5EE8E512652B88500D167F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E5EE8E2F2652B88400D167F8 = {
+			isa = PBXGroup;
+			children = (
+				E5EE8E3A2652B88400D167F8 /* twitterclone */,
+				E5EE8E4C2652B88400D167F8 /* twittercloneTests */,
+				E5EE8E572652B88500D167F8 /* twittercloneUITests */,
+				E5EE8E392652B88400D167F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E5EE8E392652B88400D167F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5EE8E382652B88400D167F8 /* twitterclone.app */,
+				E5EE8E492652B88400D167F8 /* twittercloneTests.xctest */,
+				E5EE8E542652B88500D167F8 /* twittercloneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5EE8E3A2652B88400D167F8 /* twitterclone */ = {
+			isa = PBXGroup;
+			children = (
+				E5EE8E662652B90F00D167F8 /* App */,
+				E5EE8E692652C0B400D167F8 /* Model */,
+				E5EE8E682652C0AB00D167F8 /* ViewModels */,
+				E5EE8E672652B92900D167F8 /* Views */,
+				E5EE8E412652B88400D167F8 /* Preview Content */,
+			);
+			path = twitterclone;
+			sourceTree = "<group>";
+		};
+		E5EE8E412652B88400D167F8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E5EE8E422652B88400D167F8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E5EE8E4C2652B88400D167F8 /* twittercloneTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5EE8E4D2652B88400D167F8 /* twittercloneTests.swift */,
+				E5EE8E4F2652B88500D167F8 /* Info.plist */,
+			);
+			path = twittercloneTests;
+			sourceTree = "<group>";
+		};
+		E5EE8E572652B88500D167F8 /* twittercloneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E5EE8E582652B88500D167F8 /* twittercloneUITests.swift */,
+				E5EE8E5A2652B88500D167F8 /* Info.plist */,
+			);
+			path = twittercloneUITests;
+			sourceTree = "<group>";
+		};
+		E5EE8E662652B90F00D167F8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E5EE8E3B2652B88400D167F8 /* twittercloneApp.swift */,
+				E5EE8E3F2652B88400D167F8 /* Assets.xcassets */,
+				E5EE8E442652B88400D167F8 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E5EE8E672652B92900D167F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E5EE8E3D2652B88400D167F8 /* ContentView.swift */,
+				E5EE8E6A2652C12500D167F8 /* FeedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E5EE8E682652C0AB00D167F8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E5EE8E692652C0B400D167F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5EE8E372652B88400D167F8 /* twitterclone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5EE8E5D2652B88500D167F8 /* Build configuration list for PBXNativeTarget "twitterclone" */;
+			buildPhases = (
+				E5EE8E342652B88400D167F8 /* Sources */,
+				E5EE8E352652B88400D167F8 /* Frameworks */,
+				E5EE8E362652B88400D167F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = twitterclone;
+			productName = twitterclone;
+			productReference = E5EE8E382652B88400D167F8 /* twitterclone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E5EE8E482652B88400D167F8 /* twittercloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5EE8E602652B88500D167F8 /* Build configuration list for PBXNativeTarget "twittercloneTests" */;
+			buildPhases = (
+				E5EE8E452652B88400D167F8 /* Sources */,
+				E5EE8E462652B88400D167F8 /* Frameworks */,
+				E5EE8E472652B88400D167F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5EE8E4B2652B88400D167F8 /* PBXTargetDependency */,
+			);
+			name = twittercloneTests;
+			productName = twittercloneTests;
+			productReference = E5EE8E492652B88400D167F8 /* twittercloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E5EE8E532652B88500D167F8 /* twittercloneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5EE8E632652B88500D167F8 /* Build configuration list for PBXNativeTarget "twittercloneUITests" */;
+			buildPhases = (
+				E5EE8E502652B88500D167F8 /* Sources */,
+				E5EE8E512652B88500D167F8 /* Frameworks */,
+				E5EE8E522652B88500D167F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5EE8E562652B88500D167F8 /* PBXTargetDependency */,
+			);
+			name = twittercloneUITests;
+			productName = twittercloneUITests;
+			productReference = E5EE8E542652B88500D167F8 /* twittercloneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5EE8E302652B88400D167F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					E5EE8E372652B88400D167F8 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					E5EE8E482652B88400D167F8 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = E5EE8E372652B88400D167F8;
+					};
+					E5EE8E532652B88500D167F8 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = E5EE8E372652B88400D167F8;
+					};
+				};
+			};
+			buildConfigurationList = E5EE8E332652B88400D167F8 /* Build configuration list for PBXProject "twitterclone" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E5EE8E2F2652B88400D167F8;
+			productRefGroup = E5EE8E392652B88400D167F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5EE8E372652B88400D167F8 /* twitterclone */,
+				E5EE8E482652B88400D167F8 /* twittercloneTests */,
+				E5EE8E532652B88500D167F8 /* twittercloneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5EE8E362652B88400D167F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5EE8E432652B88400D167F8 /* Preview Assets.xcassets in Resources */,
+				E5EE8E402652B88400D167F8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5EE8E472652B88400D167F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5EE8E522652B88500D167F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5EE8E342652B88400D167F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5EE8E3E2652B88400D167F8 /* ContentView.swift in Sources */,
+				E5EE8E6B2652C12500D167F8 /* FeedView.swift in Sources */,
+				E5EE8E3C2652B88400D167F8 /* twittercloneApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5EE8E452652B88400D167F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5EE8E4E2652B88500D167F8 /* twittercloneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5EE8E502652B88500D167F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5EE8E592652B88500D167F8 /* twittercloneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5EE8E4B2652B88400D167F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5EE8E372652B88400D167F8 /* twitterclone */;
+			targetProxy = E5EE8E4A2652B88400D167F8 /* PBXContainerItemProxy */;
+		};
+		E5EE8E562652B88500D167F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5EE8E372652B88400D167F8 /* twitterclone */;
+			targetProxy = E5EE8E552652B88500D167F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E5EE8E5B2652B88500D167F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = twitterclone/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E5EE8E5C2652B88500D167F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = twitterclone/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5EE8E5E2652B88500D167F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"twitterclone/Preview Content\"";
+				DEVELOPMENT_TEAM = 5B74F682NG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = twitterclone/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.syntaks.twitterclone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E5EE8E5F2652B88500D167F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"twitterclone/Preview Content\"";
+				DEVELOPMENT_TEAM = 5B74F682NG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = twitterclone/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.syntaks.twitterclone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E5EE8E612652B88500D167F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5B74F682NG;
+				INFOPLIST_FILE = twittercloneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.syntaks.twittercloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twitterclone.app/twitterclone";
+			};
+			name = Debug;
+		};
+		E5EE8E622652B88500D167F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5B74F682NG;
+				INFOPLIST_FILE = twittercloneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.syntaks.twittercloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twitterclone.app/twitterclone";
+			};
+			name = Release;
+		};
+		E5EE8E642652B88500D167F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5B74F682NG;
+				INFOPLIST_FILE = twittercloneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.syntaks.twittercloneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = twitterclone;
+			};
+			name = Debug;
+		};
+		E5EE8E652652B88500D167F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5B74F682NG;
+				INFOPLIST_FILE = twittercloneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.syntaks.twittercloneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = twitterclone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5EE8E332652B88400D167F8 /* Build configuration list for PBXProject "twitterclone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5EE8E5B2652B88500D167F8 /* Debug */,
+				E5EE8E5C2652B88500D167F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5EE8E5D2652B88500D167F8 /* Build configuration list for PBXNativeTarget "twitterclone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5EE8E5E2652B88500D167F8 /* Debug */,
+				E5EE8E5F2652B88500D167F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5EE8E602652B88500D167F8 /* Build configuration list for PBXNativeTarget "twittercloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5EE8E612652B88500D167F8 /* Debug */,
+				E5EE8E622652B88500D167F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5EE8E632652B88500D167F8 /* Build configuration list for PBXNativeTarget "twittercloneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5EE8E642652B88500D167F8 /* Debug */,
+				E5EE8E652652B88500D167F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5EE8E302652B88400D167F8 /* Project object */;
+}
