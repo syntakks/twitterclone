@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E540C8292652C77A00B6093E /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E540C8282652C77A00B6093E /* FeedView.swift */; };
+		E540C82B2652CDA000B6093E /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E540C82A2652CDA000B6093E /* TweetCell.swift */; };
 		E5EE8E3C2652B88400D167F8 /* twittercloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E3B2652B88400D167F8 /* twittercloneApp.swift */; };
 		E5EE8E3E2652B88400D167F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E3D2652B88400D167F8 /* ContentView.swift */; };
 		E5EE8E402652B88400D167F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5EE8E3F2652B88400D167F8 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		E540C8282652C77A00B6093E /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		E540C82A2652CDA000B6093E /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		E5EE8E382652B88400D167F8 /* twitterclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5EE8E3B2652B88400D167F8 /* twittercloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittercloneApp.swift; sourceTree = "<group>"; };
 		E5EE8E3D2652B88400D167F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				E5EE8E3D2652B88400D167F8 /* ContentView.swift */,
 				E540C8282652C77A00B6093E /* FeedView.swift */,
+				E540C82A2652CDA000B6093E /* TweetCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				E5EE8E3E2652B88400D167F8 /* ContentView.swift in Sources */,
 				E540C8292652C77A00B6093E /* FeedView.swift in Sources */,
 				E5EE8E3C2652B88400D167F8 /* twittercloneApp.swift in Sources */,
+				E540C82B2652CDA000B6093E /* TweetCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

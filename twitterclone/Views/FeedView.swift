@@ -13,6 +13,12 @@ struct FeedView: View {
         
         ScrollView {
           
+          LazyVStack {
+            ForEach(0..<100) { item in
+              TweetCell()
+            }
+          }
+          
         }
         
         Button(
