@@ -9,15 +9,15 @@ import SwiftUI
 
 struct TweetCell: View {
     var body: some View {
-      VStack {
-        HStack(alignment: .top) {
+      VStack(alignment: .leading) {
+        HStack(alignment: .top, spacing: 12) {
           Image("batman")
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
             .clipped()
             .frame(width: 56, height: 56)
             .clipShape(Circle())
-            .padding(.leading)
+            .padding(.leading, 8)
           
           VStack(alignment: .leading, spacing: 4) {
             HStack {
@@ -83,6 +83,7 @@ struct TweetCell: View {
         
         Divider()
       }
+      .padding(.top, 4)
     }
 }
 

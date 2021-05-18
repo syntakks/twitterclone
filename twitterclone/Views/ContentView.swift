@@ -20,14 +20,14 @@ struct ContentView: View {
           }
         
         // Search
-        Text("Search")
+        SearchView()
           .tabItem {
             Image(systemName: "magnifyingglass")
             Text("Search")
           }
         
         // Messages
-        Text("Messages")
+        ConversationsView()
           .tabItem {
             Image(systemName: "envelope")
             Text("Messages")
@@ -43,5 +43,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+    ContentView().colorScheme(.dark)
   }
 }
