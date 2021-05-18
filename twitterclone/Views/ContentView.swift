@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  twitterclone
 //
-//  Created by Stephen Wall on 5/17/21.
+//  Created by Stephen Wall on 5/17/21
 //
 
 import SwiftUI
