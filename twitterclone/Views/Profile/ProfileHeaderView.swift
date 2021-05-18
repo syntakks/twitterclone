@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-  @Environment(\.colorScheme) var colorSheme
+  @Environment(\.colorScheme) var colorScheme
   
   var body: some View {
     VStack {
       // Avatar
       Image("batman")
-        .resizable()
-        .scaledToFill()
-        .frame(width: 120, height: 120)
-        .clipShape(Circle())
-        .shadow(color:colorSheme == .dark ? .white : .black, radius: 5, x: 0, y: 0)
+        .profileImageStyle(colorScheme: colorScheme)
       
       // Name
       Text("Bruce Wayne")
