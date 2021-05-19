@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct SearchView: View {
+  @ObservedObject var viewModel = SearchViewModel()
   @State var searchText = ""
+  
     var body: some View {
       ScrollView {
         SearchBar(text: $searchText)
         LazyVStack(alignment: .leading) {
-          ForEach(0..<10) { item in
+          ForEach(viewModel.users) { user in
             NavigationLink(
-              destination: UserProfileView(),
+              destination: UserProfileView(user: user),
               label: {
-                UserCell()
+                UserCell(user: user)
               })
           }
         }

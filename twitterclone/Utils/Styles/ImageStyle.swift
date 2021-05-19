@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 extension Image {
   func profileImageStyle(colorScheme: ColorScheme) -> some View {
@@ -28,5 +29,15 @@ extension Image {
       .padding(.top, 88)
       .padding(.bottom)
   }
-  
+}
+
+extension KFImage {
+  func profileImageStyle(colorScheme: ColorScheme) -> some View {
+    self
+      .resizable()
+      .scaledToFill()
+      .frame(width: 120, height: 120)
+      .clipShape(Circle())
+      .shadow(color:colorScheme == .dark ? .white : .black, radius: 5, x: 0, y: 0)
+  }
 }

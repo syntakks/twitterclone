@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewMessageView: View {
+  @ObservedObject var viewModel = SearchViewModel()
   @State var searchText = ""
   @Binding var show: Bool
   @Binding var startChat: Bool
@@ -16,14 +17,14 @@ struct NewMessageView: View {
     ScrollView {
       SearchBar(text: $searchText)
       LazyVStack(alignment: .leading) {
-        ForEach(0..<10) { item in
+        ForEach(viewModel.users) { user in
           Button(
             action: {
               self.show.toggle()
               self.startChat.toggle()
             },
             label: {
-              UserCell()
+              UserCell(user: user)
             })
         }
       }
