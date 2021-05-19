@@ -1,15 +1,16 @@
 # twitterclone
 SwiftUI Twitter Clone
 
-#Login
+# Screenshots
+## Login
 ![Alt text](Screenshots/login.png?raw=true "Login")
-#Register
+## Register
 ![Alt text](Screenshots/register.png?raw=true "Register")
-#Feed
+## Feed
 ![Alt text](Screenshots/feed.png?raw=true "Feed")
-#Search
+## Search
 ![Alt text](Screenshots/search.png?raw=true "Search")
-#Profile
+## Profile
 ![Alt text](Screenshots/profile.png?raw=true "Profile")
-#Chat
+## Chat
 ![Alt text](Screenshots/chat.png?raw=true "Chat")
