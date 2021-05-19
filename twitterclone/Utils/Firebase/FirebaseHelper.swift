@@ -9,9 +9,17 @@ import Firebase
 
 /// This enum allows for easy fetch of document collections
 enum FS: String, CaseIterable {
+  case followers
+  case following
+  case messages
+  case tweets
   case users
   
-  func fetch() ->  CollectionReference {
+  /// Returns collection of given enum name
+  func collection() ->  CollectionReference {
     return Firestore.firestore().collection(self.rawValue)
   }
+  
 }
+
+

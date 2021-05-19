@@ -52,10 +52,10 @@ struct RegistrationView: View {
         Button("Sign Up", action: {
           guard let image = selectedUIImage else { return }
           viewModel.registerUser(
-            email: email.lowercased().trimmingCharacters(in: [" "]),
+            email: email.lowercased(),
             password: password,
-            username: username.lowercased().trimmingCharacters(in: [" "]),
-            fullname: fullName.trimmingCharacters(in: [" "]),
+            username: username.lowercased(),
+            fullname: fullName,
             profileImage: image)
         })
         .buttonStyle(SignInButtonStyle())

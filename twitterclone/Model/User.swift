@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import Kingfisher
 
 struct User: Identifiable {
   let id: String
@@ -34,3 +35,4 @@ let MOCK_USER = User(dictionary: [
   "fullname": "Elon Musk",
   "profileImageUrl": "https://images.uncyclomedia.co/illogicopedia/en/thumb/8/89/Elon_musk.jpg/300px-Elon_musk.jpg"
 ])
+

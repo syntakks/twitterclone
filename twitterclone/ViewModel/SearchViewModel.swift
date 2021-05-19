@@ -16,7 +16,7 @@ class SearchViewModel: ObservableObject {
   }
   
   func fetchUsers() {
-    FS.users.fetch().getDocuments { snapshot, error in
+    FS.users.collection().getDocuments { snapshot, error in
       guard let documents = snapshot?.documents else { return }
       self.users = documents.map { User(dictionary: $0.data()) }
     }
