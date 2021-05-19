@@ -304,8 +304,8 @@
 		E5EE8E672652B92900D167F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E58DB41926545182007EAC54 /* Authentication */,
 				E5EE8E3D2652B88400D167F8 /* ContentView.swift */,
+				E58DB41926545182007EAC54 /* Authentication */,
 				E5620F2B265315200047AF3E /* Feed */,
 				E5620F2F26531D5D0047AF3E /* Messages */,
 				E5620F40265367810047AF3E /* Profile */,
