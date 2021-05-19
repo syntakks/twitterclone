@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegistrationView: View {
   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-  @ObservedObject var viewModel = AuthViewModel()
+  @EnvironmentObject var viewModel: AuthViewModel
   @State var fullName = ""
   @State var email = ""
   @State var username = ""
@@ -52,10 +52,10 @@ struct RegistrationView: View {
         Button("Sign Up", action: {
           guard let image = selectedUIImage else { return }
           viewModel.registerUser(
-            email: email,
+            email: email.lowercased().trimmingCharacters(in: [" "]),
             password: password,
-            username: username,
-            fullname: fullName,
+            username: username.lowercased().trimmingCharacters(in: [" "]),
+            fullname: fullName.trimmingCharacters(in: [" "]),
             profileImage: image)
         })
         .buttonStyle(SignInButtonStyle())

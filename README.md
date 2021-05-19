@@ -1,5 +1,7 @@
 # twitterclone
 SwiftUI Twitter Clone
+This app uses Firebase. You will need to create your own GoogleService-Info.plist file and place it in the ROOT DIRECTORY of the project. 
+This app also uses Kingfisher. 
 
 # Screenshots
 

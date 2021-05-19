@@ -6,23 +6,25 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileHeaderView: View {
   @Environment(\.colorScheme) var colorScheme
+  let user: User
   
   var body: some View {
     VStack {
       // Avatar
-      Image("batman")
+      KFImage(URL(string: user.profileImageUrl))
         .profileImageStyle(colorScheme: colorScheme)
       
       // Name
-      Text("Bruce Wayne")
+      Text(user.fullname)
         .font(.system(size: 16, weight: .semibold))
         .padding(.top, 8)
       
       // @
-      Text("@batman")
+      Text("@\(user.username)")
         .font(.system(size: 12))
         .foregroundColor(.gray)
       // Bio
@@ -59,6 +61,6 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
   static var previews: some View {
-    ProfileHeaderView()
+    ProfileHeaderView(user: MOCK_USER)
   }
 }

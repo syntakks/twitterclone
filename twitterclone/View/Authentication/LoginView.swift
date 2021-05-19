@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+  @EnvironmentObject var viewModel: AuthViewModel
   @State var email = ""
   @State var password = ""
   
@@ -39,7 +40,7 @@ struct LoginView: View {
             }
           }
           
-          Button("Sign In", action: {})
+          Button("Sign In", action: login)
             .buttonStyle(SignInButtonStyle())
             .padding()
           
@@ -63,6 +64,10 @@ struct LoginView: View {
       .background(Color(#colorLiteral(red: 0.1131996438, green: 0.631419003, blue: 0.9528219104, alpha: 1)))
       .ignoresSafeArea()
     }
+  }
+  
+  func login() {
+    viewModel.login(withEmail: email, password: password)
   }
 }
 
