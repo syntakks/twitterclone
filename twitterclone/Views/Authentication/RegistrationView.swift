@@ -8,28 +8,37 @@
 import SwiftUI
 
 struct RegistrationView: View {
+  @Environment(\.presentationMode) var mode: Binding<PresentationMode>
   @State var fullName = ""
   @State var email = ""
   @State var username = ""
   @State var password = ""
   @State var showImagePicker = false
-  @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+  @State var selectedUIImage: UIImage?
+  @State var image: Image?
+  
+  func loadImage() {
+    guard let selectedImage = selectedUIImage else { return }
+    image = Image(uiImage: selectedImage)
+  }
   
   var body: some View {
     ZStack {
       VStack {
         Button(action: { showImagePicker.toggle() }) {
-          Image("plus_photo")
-            .resizable()
-            .renderingMode(.template)
-            .foregroundColor(.white)
-            .scaledToFill()
-            .frame(width: 140, height: 140)
-            .padding(.top, 88)
-            .padding(.bottom)
+          ZStack {
+            if let image = image {
+              image
+                .addPhotoImageStyle(usePlaceholder: false)
+              
+            } else {
+              Image("plus_photo")
+                .addPhotoImageStyle(usePlaceholder: true)
+            }
+          }
         }
-        .sheet(isPresented: $showImagePicker) {
-          ImagePicker()
+        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+          ImagePicker(image: $selectedUIImage)
         }
         
         VStack(spacing: 20) {
