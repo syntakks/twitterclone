@@ -19,7 +19,7 @@ struct SearchView: View {
             NavigationLink(
               destination: UserProfileView(user: user),
               label: {
-                UserCell(user: user)
+                  UserCell(user: user)
               })
           }
         }

@@ -14,13 +14,9 @@ struct UserCell: View {
   
     var body: some View {
       HStack(spacing: 16) {
-        KFImage(URL(string: user.profileImageUrl))
-          .resizable()
-          .scaledToFill()
-          .clipped()
-          .frame(width: 56, height: 56)
-          .clipShape(Circle())
-          .padding(.leading)
+        KFImage.url(URL(string: user.profileImageUrl)!)
+          .circleImageStyle(size: 56, colorScheme: colorScheme)
+          
         
         VStack(alignment: .leading) {
           Text(user.username)

@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ContentView: View {
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
   @EnvironmentObject var viewModel: AuthViewModel
   
   var body: some View {
@@ -40,6 +42,15 @@ struct ContentView: View {
           }
           .navigationBarTitle("Home")
           .navigationBarTitleDisplayMode(.inline)
+          .navigationBarItems(
+            leading:
+              Button(action: {}, label: {
+                if let user = viewModel.user {
+                  KFImage(URL(string: user.profileImageUrl))
+                    .barButtonCircleImageStyle(colorScheme: colorScheme)
+                }
+              })
+          )
           
         }
       } else {
@@ -53,6 +64,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
-    ContentView().colorScheme(.dark)
+      .environmentObject(AuthViewModel())
   }
 }

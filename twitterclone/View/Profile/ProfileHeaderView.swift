@@ -10,21 +10,23 @@ import Kingfisher
 
 struct ProfileHeaderView: View {
   @Environment(\.colorScheme) var colorScheme
-  let user: User
+  let viewModel: ProfileViewModel
+  @Binding var isFollowed: Bool
+  private let options: KingfisherOptionsInfo = [.processor(ResizingImageProcessor(referenceSize: .init(width: 120, height: 120), mode: .aspectFill))]
   
   var body: some View {
     VStack {
       // Avatar
-      KFImage(URL(string: user.profileImageUrl))
-        .profileImageStyle(colorScheme: colorScheme)
-      
+      KFImage.url(URL(string: viewModel.user.profileImageUrl)!)
+        .circleImageStyle(size: 120, colorScheme: colorScheme)
+
       // Name
-      Text(user.fullname)
+      Text(viewModel.user.fullname)
         .font(.system(size: 16, weight: .semibold))
         .padding(.top, 8)
       
       // @
-      Text("@\(user.username)")
+      Text("@\(viewModel.user.username)")
         .font(.system(size: 12))
         .foregroundColor(.gray)
       // Bio
@@ -51,7 +53,9 @@ struct ProfileHeaderView: View {
       }
       .padding()
       
-      ProfileActionButtonView(isCurrentUser: false)
+      ProfileActionButtonView(
+        viewModel: viewModel,
+        isFollowed: $isFollowed)
       
     }
     .padding()
@@ -61,6 +65,6 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
   static var previews: some View {
-    ProfileHeaderView(user: MOCK_USER)
+    ProfileHeaderView(viewModel: ProfileViewModel(user: MOCK_USER), isFollowed: .constant(false))
   }
 }

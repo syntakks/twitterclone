@@ -18,14 +18,14 @@ struct NewMessageView: View {
       SearchBar(text: $searchText)
       LazyVStack(alignment: .leading) {
         ForEach(viewModel.users) { user in
-          Button(
-            action: {
-              self.show.toggle()
-              self.startChat.toggle()
-            },
-            label: {
-              UserCell(user: user)
-            })
+          
+          Button(action: {
+            self.show.toggle()
+            self.startChat.toggle()
+          }) {
+            UserCell(user: user)
+          }
+          
         }
       }
     }
