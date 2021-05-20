@@ -15,7 +15,7 @@ struct UserCell: View {
     var body: some View {
       HStack(spacing: 16) {
         KFImage.url(URL(string: user.profileImageUrl)!)
-          .userCellImageStyle(colorScheme: colorScheme)
+          .circleImageStyle(size: 56, colorScheme: colorScheme)
           
         
         VStack(alignment: .leading) {

@@ -32,28 +32,21 @@ extension Image {
 }
 
 extension KFImage {
-  
-  func profileImageStyle(colorScheme: ColorScheme) -> some View {
+  func circleImageStyle(size: Int, colorScheme: ColorScheme, withShadow: Bool = true) -> some View {
     self
       .setProcessor(
         ResizingImageProcessor(
-          referenceSize: .init(width: 120, height: 120),
+          referenceSize: .init(width: size, height: size),
           mode: .aspectFill)
       )
       .clipShape(Circle())
-      .shadow(color:colorScheme == .dark ? .white : .black, radius: 5, x: 0, y: 0)
+      .shadow(color:colorScheme == .dark ? .white : .black, radius: withShadow ? 5 : 0, x: 0, y: 0)
   }
   
-  func userCellImageStyle(colorScheme: ColorScheme) -> some View {
+  func barButtonCircleImageStyle(colorScheme: ColorScheme) -> some View {
     self
-      .setProcessor(
-        ResizingImageProcessor(
-          referenceSize: .init(width: 56, height: 56),
-          mode: .aspectFill)
-      )
-      .clipShape(Circle())
-      .shadow(color:colorScheme == .dark ? .white : .black, radius: 5, x: 0, y: 0)
-      .padding(.leading)
+      .circleImageStyle(size: 32, colorScheme: colorScheme, withShadow: false)
+      .padding(.leading, 16)
+      .padding(.bottom, 8)
   }
-  
 }

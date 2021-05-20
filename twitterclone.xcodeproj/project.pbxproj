@@ -166,13 +166,6 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		E54187DC2655BE5700E128EC /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		E5487C57265424AC00B94783 /* Tweets */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +230,6 @@
 		E58DB40B26542B75007EAC54 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E54187DC2655BE5700E128EC /* Network */,
 				E50C13932654C48200CF3444 /* Firebase */,
 				E58DB4162654439E007EAC54 /* Platform */,
 				E58DB40F2654414F007EAC54 /* Styles */,

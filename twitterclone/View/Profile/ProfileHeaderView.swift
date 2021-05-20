@@ -18,7 +18,7 @@ struct ProfileHeaderView: View {
     VStack {
       // Avatar
       KFImage.url(URL(string: viewModel.user.profileImageUrl)!)
-        .profileImageStyle(colorScheme: colorScheme)
+        .circleImageStyle(size: 120, colorScheme: colorScheme)
 
       // Name
       Text(viewModel.user.fullname)
