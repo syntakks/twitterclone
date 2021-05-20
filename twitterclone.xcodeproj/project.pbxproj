@@ -44,6 +44,10 @@
 		E58DB41B26545191007EAC54 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58DB41A26545191007EAC54 /* LoginView.swift */; };
 		E58DB41D26545199007EAC54 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58DB41C26545199007EAC54 /* RegistrationView.swift */; };
 		E58DB41F265452D1007EAC54 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58DB41E265452D1007EAC54 /* CustomTextField.swift */; };
+		E5CDA3A22657093C000312FB /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDA3A12657093C000312FB /* DrawerView.swift */; };
+		E5CDA3A42657094C000312FB /* DrawerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDA3A32657094C000312FB /* DrawerHeaderView.swift */; };
+		E5CDA3A626570957000312FB /* DrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDA3A526570957000312FB /* DrawerCell.swift */; };
+		E5CDA3A82657096B000312FB /* DrawerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDA3A72657096B000312FB /* DrawerViewModel.swift */; };
 		E5E8A378265474EE00AB75FA /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A377265474EE00AB75FA /* TextStyle.swift */; };
 		E5EE8E3C2652B88400D167F8 /* twittercloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E3B2652B88400D167F8 /* twittercloneApp.swift */; };
 		E5EE8E3E2652B88400D167F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E3D2652B88400D167F8 /* ContentView.swift */; };
@@ -103,6 +107,10 @@
 		E58DB41A26545191007EAC54 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E58DB41C26545199007EAC54 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		E58DB41E265452D1007EAC54 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E5CDA3A12657093C000312FB /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
+		E5CDA3A32657094C000312FB /* DrawerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerHeaderView.swift; sourceTree = "<group>"; };
+		E5CDA3A526570957000312FB /* DrawerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCell.swift; sourceTree = "<group>"; };
+		E5CDA3A72657096B000312FB /* DrawerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewModel.swift; sourceTree = "<group>"; };
 		E5E8A377265474EE00AB75FA /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		E5EE8E382652B88400D167F8 /* twitterclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5EE8E3B2652B88400D167F8 /* twittercloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittercloneApp.swift; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 				E50C138A2654A73D00CF3444 /* AuthViewModel.swift */,
 				E50C13912654C40900CF3444 /* SearchViewModel.swift */,
 				E54187DA2655997C00E128EC /* ProfileViewModel.swift */,
+				E5CDA3A72657096B000312FB /* DrawerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -275,6 +284,16 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		E5CDA3A026570922000312FB /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				E5CDA3A12657093C000312FB /* DrawerView.swift */,
+				E5CDA3A32657094C000312FB /* DrawerHeaderView.swift */,
+				E5CDA3A526570957000312FB /* DrawerCell.swift */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
 		E5EE8E2F2652B88400D167F8 = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +367,7 @@
 		E5EE8E672652B92900D167F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E5CDA3A026570922000312FB /* Drawer */,
 				E5EE8E3D2652B88400D167F8 /* ContentView.swift */,
 				E58DB41926545182007EAC54 /* Authentication */,
 				E5620F2B265315200047AF3E /* Feed */,
@@ -519,12 +539,15 @@
 				E5620F3126531D9B0047AF3E /* ConversationsView.swift in Sources */,
 				E5EE8E3C2652B88400D167F8 /* twittercloneApp.swift in Sources */,
 				E50C13922654C40900CF3444 /* SearchViewModel.swift in Sources */,
+				E5CDA3A626570957000312FB /* DrawerCell.swift in Sources */,
 				E55B753D2654688000041464 /* ImagePicker.swift in Sources */,
 				E5620F3926532D4B0047AF3E /* ChatBubbleShape.swift in Sources */,
 				E5620F3F2653632A0047AF3E /* NewMessageView.swift in Sources */,
+				E5CDA3A22657093C000312FB /* DrawerView.swift in Sources */,
 				E50C138B2654A73D00CF3444 /* AuthViewModel.swift in Sources */,
 				E540C82B2652CDA000B6093E /* TweetCell.swift in Sources */,
 				E5620F42265367BB0047AF3E /* UserProfileView.swift in Sources */,
+				E5CDA3A82657096B000312FB /* DrawerViewModel.swift in Sources */,
 				E5620F2A26530E810047AF3E /* SearchBar.swift in Sources */,
 				E5620F462653689E0047AF3E /* ProfileActionButtonView.swift in Sources */,
 				E5620F2E265315660047AF3E /* UserCell.swift in Sources */,
@@ -532,6 +555,7 @@
 				E5620F3326531DAC0047AF3E /* ConversationCell.swift in Sources */,
 				E54187DB2655997C00E128EC /* ProfileViewModel.swift in Sources */,
 				E58DB418265443C1007EAC54 /* ViewModifier.swift in Sources */,
+				E5CDA3A42657094C000312FB /* DrawerHeaderView.swift in Sources */,
 				E50C13952654C49700CF3444 /* FirebaseHelper.swift in Sources */,
 				E5620F3D2653367C0047AF3E /* Message.swift in Sources */,
 			);

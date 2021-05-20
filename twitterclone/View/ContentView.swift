@@ -11,6 +11,7 @@ import Kingfisher
 struct ContentView: View {
   @Environment(\.colorScheme) var colorScheme: ColorScheme
   @EnvironmentObject var viewModel: AuthViewModel
+  @State private var isDrawerShowing = false
   
   var body: some View {
     Group {
@@ -45,10 +46,11 @@ struct ContentView: View {
           .navigationBarItems(
             leading:
               Button(action: {}, label: {
-                if let user = viewModel.user {
-                  KFImage(URL(string: user.profileImageUrl))
-                    .barButtonCircleImageStyle(colorScheme: colorScheme)
-                }
+                Image(systemName: "line.horizontal.3.circle")
+                  .resizable()
+                  .frame(width: 30, height: 30)
+                  .padding(.bottom, 8)
+                  .foregroundColor(.gray)
               })
           )
           
