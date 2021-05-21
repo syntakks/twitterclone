@@ -48,6 +48,8 @@
 		E5CDA3A42657094C000312FB /* DrawerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDA3A32657094C000312FB /* DrawerHeaderView.swift */; };
 		E5CDA3A626570957000312FB /* DrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDA3A526570957000312FB /* DrawerCell.swift */; };
 		E5CDA3A82657096B000312FB /* DrawerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDA3A72657096B000312FB /* DrawerViewModel.swift */; };
+		E5D4B01A265852A400DD7862 /* NavBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4B019265852A400DD7862 /* NavBarModifier.swift */; };
+		E5D4B01D265859BB00DD7862 /* ViewBuilderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4B01C265859BB00DD7862 /* ViewBuilderExtensions.swift */; };
 		E5E8A378265474EE00AB75FA /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A377265474EE00AB75FA /* TextStyle.swift */; };
 		E5EE8E3C2652B88400D167F8 /* twittercloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E3B2652B88400D167F8 /* twittercloneApp.swift */; };
 		E5EE8E3E2652B88400D167F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EE8E3D2652B88400D167F8 /* ContentView.swift */; };
@@ -111,6 +113,8 @@
 		E5CDA3A32657094C000312FB /* DrawerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerHeaderView.swift; sourceTree = "<group>"; };
 		E5CDA3A526570957000312FB /* DrawerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCell.swift; sourceTree = "<group>"; };
 		E5CDA3A72657096B000312FB /* DrawerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewModel.swift; sourceTree = "<group>"; };
+		E5D4B019265852A400DD7862 /* NavBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarModifier.swift; sourceTree = "<group>"; };
+		E5D4B01C265859BB00DD7862 /* ViewBuilderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilderExtensions.swift; sourceTree = "<group>"; };
 		E5E8A377265474EE00AB75FA /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		E5EE8E382652B88400D167F8 /* twitterclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5EE8E3B2652B88400D167F8 /* twittercloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittercloneApp.swift; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 		E58DB40B26542B75007EAC54 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E5D4B01B2658599B00DD7862 /* ViewBuilder */,
+				E5D4B0182658528A00DD7862 /* Modifier */,
 				E50C13932654C48200CF3444 /* Firebase */,
 				E58DB4162654439E007EAC54 /* Platform */,
 				E58DB40F2654414F007EAC54 /* Styles */,
@@ -292,6 +298,22 @@
 				E5CDA3A526570957000312FB /* DrawerCell.swift */,
 			);
 			path = Drawer;
+			sourceTree = "<group>";
+		};
+		E5D4B0182658528A00DD7862 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4B019265852A400DD7862 /* NavBarModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		E5D4B01B2658599B00DD7862 /* ViewBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4B01C265859BB00DD7862 /* ViewBuilderExtensions.swift */,
+			);
+			path = ViewBuilder;
 			sourceTree = "<group>";
 		};
 		E5EE8E2F2652B88400D167F8 = {
@@ -528,6 +550,7 @@
 				E5620F3B265334B20047AF3E /* MessageView.swift in Sources */,
 				E5620F35265326EB0047AF3E /* MessageInputView.swift in Sources */,
 				E5EE8E3E2652B88400D167F8 /* ContentView.swift in Sources */,
+				E5D4B01D265859BB00DD7862 /* ViewBuilderExtensions.swift in Sources */,
 				E5620F442653688A0047AF3E /* ProfileHeaderView.swift in Sources */,
 				E540C8292652C77A00B6093E /* FeedView.swift in Sources */,
 				E5620F37265327AD0047AF3E /* ChatView.swift in Sources */,
@@ -543,6 +566,7 @@
 				E55B753D2654688000041464 /* ImagePicker.swift in Sources */,
 				E5620F3926532D4B0047AF3E /* ChatBubbleShape.swift in Sources */,
 				E5620F3F2653632A0047AF3E /* NewMessageView.swift in Sources */,
+				E5D4B01A265852A400DD7862 /* NavBarModifier.swift in Sources */,
 				E5CDA3A22657093C000312FB /* DrawerView.swift in Sources */,
 				E50C138B2654A73D00CF3444 /* AuthViewModel.swift in Sources */,
 				E540C82B2652CDA000B6093E /* TweetCell.swift in Sources */,

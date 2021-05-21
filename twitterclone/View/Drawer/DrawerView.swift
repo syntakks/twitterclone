@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DrawerView: View {
+  
     var body: some View {
       ZStack(alignment: .topLeading) {
         LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom)
@@ -20,14 +21,12 @@ struct DrawerView: View {
             DrawerCell()
           }
         }
-        
-        
       }
     }
 }
 
 struct DrawerView_Previews: PreviewProvider {
     static var previews: some View {
-        DrawerView()
+      DrawerView()
     }
 }
