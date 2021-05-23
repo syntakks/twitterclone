@@ -15,13 +15,11 @@ struct FeedView: View {
       ZStack(alignment: .bottomTrailing) {
         
         ScrollView {
-          
           LazyVStack {
             ForEach(viewModel.tweets) { tweet in
               TweetCell(tweet: tweet)
             }
           }
-          
         }
         
         Button(
@@ -41,6 +39,9 @@ struct FeedView: View {
             NewTweetView(isPresented: $isShowingNewTweetView)
           }
         
+      }
+      .onAppear() {
+        //viewModel.fetchTweets()
       }
     }
 }
