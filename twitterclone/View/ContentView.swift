@@ -9,8 +9,8 @@ import SwiftUI
 import Kingfisher
 
 struct ContentView: View {
-  @Environment(\.colorScheme) var colorScheme: ColorScheme
   @EnvironmentObject var viewModel: AuthViewModel
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
   @State private var isDrawerShowing = false
   
   var body: some View {
@@ -24,18 +24,14 @@ struct ContentView: View {
           if isDrawerShowing {
             DrawerView()
           }
-          HomeView()
+          HomeView(isDrawerShowing: $isDrawerShowing)
             .cornerRadius(isDrawerShowing ? 20 : 10)
             .scaleEffect(isDrawerShowing ? 0.8 : 1)
             .offset(x: isDrawerShowing ? 250 : 0, y: 0)
         }
-//        .onTapGesture {
-//          if isDrawerShowing {
-//            withAnimation(.spring()) {
-//              isDrawerShowing.toggle()
-//            }
-//          }
-//        }
+        .onAppear() {
+          isDrawerShowing = false
+        }
         .navigationBarTitle("Home")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(
@@ -45,11 +41,15 @@ struct ContentView: View {
                 isDrawerShowing.toggle()
               }
             }, label: {
-              Image(systemName: "line.horizontal.3.circle")
-                .resizable()
-                .frame(width: 30, height: 30)
-                .padding(.bottom, 8)
-                .foregroundColor(.gray)
+              ZStack {
+                Image(systemName: isDrawerShowing ? "xmark" : "line.horizontal.3")
+                  .resizable()
+                  .scaledToFit()
+                  .foregroundColor(getIconColor())
+                
+              }
+              .frame(width: 20, height: 20)
+              .foregroundColor(isDrawerShowing ? .red : .black)
             })
         )
       }
@@ -60,39 +60,21 @@ struct ContentView: View {
     
     
   }
+  
+  func getIconColor() -> Color  {
+    if isDrawerShowing {
+      return Color.red
+    }
+    if colorScheme == .dark {
+      return .white
+    }
+    return .black
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
       .environmentObject(AuthViewModel())
-  }
-}
-
-struct HomeView: View {
-  var body: some View {
-    ZStack {
-      TabView {
-        FeedView()
-          .tabItem {
-            Image(systemName: "house")
-            Text("Home")
-          }
-        
-        // Search
-        SearchView()
-          .tabItem {
-            Image(systemName: "magnifyingglass")
-            Text("Search")
-          }
-        
-        // Messages
-        ConversationsView()
-          .tabItem {
-            Image(systemName: "envelope")
-            Text("Messages")
-          }
-      }
-    }
   }
 }

@@ -6,19 +6,20 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct DrawerHeaderView: View {
+  @Environment(\.colorScheme) var colorScheme
+  @State var user: User
+  
     var body: some View {
       VStack(alignment: .leading) {
-        Image("batman")
-          .resizable()
-          .scaledToFill()
-          .frame(width: 64, height: 64)
-          .clipShape(Circle())
+        KFImage.url(URL(string: user.profileImageUrl)!)
+          .circleImageStyle(size: 64, colorScheme: colorScheme)
         
-        Text("Bruce Wayne")
+        Text(user.fullname)
           .font(.system(size: 24, weight: .semibold))
-        Text("@batman")
+        Text("@\(user.username)")
           .font(.system(size: 14))
           .padding(.bottom, 32)
         
@@ -44,7 +45,7 @@ struct DrawerHeaderView_Previews: PreviewProvider {
         LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom)
           .ignoresSafeArea()
         VStack {
-          DrawerHeaderView()
+          DrawerHeaderView(user: MOCK_USER)
             .foregroundColor(.white)
           Spacer()
         }

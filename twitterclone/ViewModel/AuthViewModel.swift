@@ -14,10 +14,11 @@ class AuthViewModel: ObservableObject {
   @Published var error: Error?
   @Published var user: User?
   
+  static let shared = AuthViewModel()
+  
   init() {
     // User object or nil -> not logged in.
     userSession = Auth.auth().currentUser
-    print("DEBUG: USER SESSION: \(userSession != nil ? "Signed In" : "Signed Out")")
     // Populate User
     fetchUser()
   }
@@ -28,8 +29,8 @@ class AuthViewModel: ObservableObject {
         print("DEBUG: Failed to login: \(error.localizedDescription)")
         return
       }
-      print("DEBUG: Successfully logged in")
       self.userSession = result?.user
+      self.fetchUser()
     }
   }
   
@@ -49,7 +50,6 @@ class AuthViewModel: ObservableObject {
         print("DEBUG: Failed to upload image \(error.localizedDescription)")
         return
       }
-      print("DEBUG: Successfully uploaded user photo!")
       // Get the URL for the Image
       storageRef.downloadURL { url, error in
         guard let profileImageUrl = url?.absoluteString else { return }
@@ -75,8 +75,8 @@ class AuthViewModel: ObservableObject {
               print("DEBUG: Failed to upload data to Firestore: \(error.localizedDescription)")
               return
             }
-            print("DEBUG: Successfully uploaded user data to Firestore!")
             self.userSession = user
+            self.fetchUser()
           }
         }
       }
@@ -85,6 +85,7 @@ class AuthViewModel: ObservableObject {
   
   func signOut() {
     userSession = nil
+    user = nil
     try? Auth.auth().signOut()
   }
   
@@ -95,7 +96,6 @@ class AuthViewModel: ObservableObject {
     Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
       guard let data = snapshot?.data() else { return }
       let user = User(dictionary: data)
-      print("DEBUG: User is \(user.username)")
       self.user = user
     }
   }

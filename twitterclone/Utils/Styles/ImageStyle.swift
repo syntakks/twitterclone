@@ -40,7 +40,9 @@ extension KFImage {
           mode: .aspectFill)
       )
       .clipShape(Circle())
-      .shadow(color:colorScheme == .dark ? .white : .black, radius: withShadow ? 5 : 0, x: 0, y: 0)
+      .padding(.leading, 8)
+    
+      //.shadow(color:colorScheme == .dark ? .white : .black, radius: withShadow ? 5 : 0, x: 0, y: 0)
   }
   
   func barButtonCircleImageStyle(colorScheme: ColorScheme) -> some View {

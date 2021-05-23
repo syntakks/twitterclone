@@ -6,52 +6,55 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct NewTweetView: View {
+  @Environment(\.colorScheme) var colorScheme
   @Binding var isPresented: Bool
   @State var captionText: String = ""
+  @ObservedObject var viewModel: UploadTweetViewModel
   
-    var body: some View {
-      NavigationView {
-        VStack {
-          HStack(alignment: .top) {
-            Image("batman")
-              .resizable()
-              .scaledToFill()
-              .clipped()
-              .frame(width: 64, height: 64)
-              .cornerRadius(32)
-            
-            TextArea("What's happening?", text: $captionText)
-            
-            Spacer()
-          }
-          .padding()
+  init(isPresented: Binding<Bool>) {
+    self._isPresented = isPresented
+    self.viewModel = UploadTweetViewModel(isPresented: isPresented)
+  }
+  
+  var body: some View {
+    NavigationView {
+      VStack {
+        HStack(alignment: .top) {
+          KFImage.url(URL(string: AuthViewModel.shared.user!.profileImageUrl)!)
+            .circleImageStyle(size: 64, colorScheme: colorScheme)
+          TextArea("What's happening?", text: $captionText)
           Spacer()
         }
-        .navigationBarItems(
-          leading: Button(
-            action: { isPresented.toggle() },
-            label: {
-            Text("Cancel")
-              
-          }),
-          trailing: Button(
-            action: {},
-            label: {
-            Text("Tweet")
-              .padding(.horizontal)
-              .padding(.vertical, 8)
-              .background(Color.blue)
-              .foregroundColor(.white)
-              .clipShape(Capsule())
-          }))
+        .padding()
+        Spacer()
       }
+      .navigationBarItems(
+        leading:
+          Button(action: togglePresentation) {
+            Text("Cancel")
+          },
+        trailing:
+          Button(action: uploadTweet) {
+            Text("Tweet")
+          }.buttonStyle(TweetButtonStyle())
+      )
     }
+  }
+  
+  func togglePresentation() {
+    isPresented.toggle()
+  }
+  
+  func uploadTweet() {
+    viewModel.uploadTweet(caption: captionText)
+  }
 }
 
 struct NewTweetView_Previews: PreviewProvider {
-    static var previews: some View {
-      NewTweetView(isPresented: .constant(true))
-    }
+  static var previews: some View {
+    NewTweetView(isPresented: .constant(true))
+  }
 }

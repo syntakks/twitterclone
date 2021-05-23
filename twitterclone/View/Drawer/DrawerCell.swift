@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct DrawerCell: View {
+  var title: String
+  var imageName: String
+  
     var body: some View {
       HStack(spacing: 16) {
-        Image(systemName: "person")
-          .frame(width: 24, height: 24)
-        Text("Profile")
+        Image(systemName: imageName)
+          .frame(width: 30, height: 30)
+        Text(title)
           .font(.system(size: 15, weight: .semibold))
       }
       .padding(.vertical, 4)
       .padding(.leading, 25)
       .foregroundColor(.white)
     }
+  
+  
 }
 
 struct SideMenuCell_Previews: PreviewProvider {
@@ -29,7 +34,7 @@ struct SideMenuCell_Previews: PreviewProvider {
         VStack {
           ForEach(0..<20) { _ in
             HStack {
-              DrawerCell()
+              DrawerCell(title: "Profile", imageName: "person")
               Spacer()
             }
           }
