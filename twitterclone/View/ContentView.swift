@@ -32,7 +32,6 @@ struct ContentView: View {
         .onAppear() {
           isDrawerShowing = false
         }
-        .navigationBarTitle("Home")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(
           leading:

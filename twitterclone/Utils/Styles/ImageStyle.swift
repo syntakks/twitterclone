@@ -39,6 +39,7 @@ extension KFImage {
           referenceSize: .init(width: size, height: size),
           mode: .aspectFill)
       )
+      .frame(width: CGFloat(size), height: CGFloat(size))
       .clipShape(Circle())
       .padding(.leading, 8)
     

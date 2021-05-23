@@ -16,7 +16,7 @@ struct NewMessageView: View {
   var body: some View {
     ScrollView {
       SearchBar(text: $searchText)
-      LazyVStack(alignment: .leading, spacing: 0) {
+      LazyVStack(alignment: .leading) {
         ForEach(viewModel.users) { user in
           
           Button(action: {

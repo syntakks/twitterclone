@@ -32,6 +32,7 @@ struct CustomTextField: View {
           
           TextField("", text: $text)
             .autocapitalization(.none)
+            .foregroundColor(.white)
         }
         
       }

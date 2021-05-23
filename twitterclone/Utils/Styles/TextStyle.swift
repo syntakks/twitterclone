@@ -15,6 +15,11 @@ extension Text {
       .fontWeight(.black)
       .textCase(.uppercase)
   }
+  
+  func schemeStyle(colorScheme: ColorScheme) -> some View {
+    self
+      .foregroundColor(colorScheme == .dark ? .white : .black)
+  }
 }
 
 struct TextHeader_Previews: PreviewProvider {

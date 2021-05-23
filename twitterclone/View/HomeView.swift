@@ -9,15 +9,17 @@ import SwiftUI
 
 struct HomeView: View {
   @Binding var isDrawerShowing: Bool
+  @State var navTitle = "Home"
   
   var body: some View {
     ZStack {
-      TabView {
+      TabView(selection: $navTitle) {
         FeedView()
           .tabItem {
             Image(systemName: "house")
             Text("Home")
           }
+          .tag("Home")
         
         // Search
         SearchView()
@@ -25,6 +27,7 @@ struct HomeView: View {
             Image(systemName: "magnifyingglass")
             Text("Search")
           }
+          .tag("Search")
         
         // Messages
         ConversationsView()
@@ -32,6 +35,8 @@ struct HomeView: View {
             Image(systemName: "envelope")
             Text("Messages")
           }
+          .tag("Messages")
+        
       }
       // Empty click view overlayed the list for tap gesture.
       if isDrawerShowing {
@@ -44,6 +49,7 @@ struct HomeView: View {
       }
       
     }
+    .navigationTitle(navTitle)
   }
 }
 

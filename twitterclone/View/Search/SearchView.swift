@@ -14,7 +14,7 @@ struct SearchView: View {
   var body: some View {
     ScrollView {
       SearchBar(text: $searchText)
-      LazyVStack(alignment: .leading, spacing: 0) {
+      LazyVStack(alignment: .leading) {
         ForEach(viewModel.users) { user in
           NavigationLink(
             destination: UserProfileView(user: user),
@@ -22,8 +22,8 @@ struct SearchView: View {
               UserCell(user: user)
             })
         }
-        Spacer()
       }
+      Spacer()
     }
   }
 }

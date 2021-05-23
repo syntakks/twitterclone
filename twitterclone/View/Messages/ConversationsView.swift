@@ -56,6 +56,6 @@ struct ConversationsView: View {
 
 struct ConversationsView_Previews: PreviewProvider {
     static var previews: some View {
-        ConversationsView()
+      ConversationsView()
     }
 }
