@@ -29,7 +29,7 @@ struct UserProfileView: View {
         TweetCell(tweet: tweet)
       }
       
-      .navigationTitle("Batman")
+      .navigationTitle(user.fullname)
     }
   }
 }

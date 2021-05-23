@@ -22,8 +22,8 @@ struct SearchView: View {
               UserCell(user: user)
             })
         }
-        Spacer()
       }
+      Spacer()
     }
   }
 }
