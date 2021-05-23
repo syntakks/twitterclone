@@ -49,6 +49,17 @@ struct SignInButtonStyle: ButtonStyle {
   }
 }
 
+struct TweetButtonStyle: ButtonStyle {
+  func makeBody(configuration: Configuration) -> some View {
+    configuration.label
+      .padding(.horizontal)
+      .padding(.vertical, 8)
+      .background(Color.blue)
+      .foregroundColor(.white)
+      .clipShape(Capsule())
+  }
+}
+
 struct ButtonStyle_Previews: PreviewProvider {
   static var previews: some View {
     VStack(spacing: 40) {
