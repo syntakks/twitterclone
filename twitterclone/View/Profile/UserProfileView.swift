@@ -9,7 +9,6 @@ import SwiftUI
 
 struct UserProfileView: View {
   @ObservedObject var viewModel: ProfileViewModel
-  @ObservedObject var feedViewModel = FeedViewModel()
   @State var selectedFilter: TweetFilterOptions = .tweets
   let user: User
   
@@ -25,11 +24,18 @@ struct UserProfileView: View {
         FilterButtonView(selectedOption: $selectedFilter)
       }
       
-      ForEach(feedViewModel.tweets) { tweet in
+      ForEach(tweets(by: selectedFilter)) { tweet in
         TweetCell(tweet: tweet)
       }
       
-      .navigationTitle(user.fullname)
+      .navigationTitle(user.username)
+    }
+  }
+  
+  func tweets(by filterOption: TweetFilterOptions) -> [Tweet] {
+    switch(filterOption) {
+    case .tweets: return viewModel.userTweets
+    case .likes: return viewModel.likedTweets
     }
   }
 }

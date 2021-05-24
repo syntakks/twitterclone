@@ -10,11 +10,15 @@ import Firebase
 
 class ProfileViewModel: ObservableObject {
   @Published var isFollowed = false
+  @Published var userTweets = [Tweet]()
+  @Published var likedTweets = [Tweet]()
   let user: User
   
   init(user: User) {
     self.user = user
     checkIfUserIsFollowed()
+    fetchUserTweets()
+    fetchLikedTweets()
   }
   
   func getCurrentUid() -> String? {
@@ -60,7 +64,34 @@ class ProfileViewModel: ObservableObject {
     guard let currentUid = getCurrentUid() else { return }
     followingRef(id: currentUid).getDocuments { snapshot, _ in
       guard let isFollowed = snapshot?.isEmpty else { return }
+      print("DEBUG: isFollowed?: \(isFollowed)")
       self.isFollowed = isFollowed
+    }
+  }
+  
+  func fetchUserTweets() {
+    FS.tweets.collection().whereField("uid", isEqualTo: user.id).getDocuments { snapshot, error in
+      guard let documents = snapshot?.documents else { return }
+      self.userTweets = documents.map { Tweet(dictionary: $0.data()) }
+    }
+  }
+  
+  func fetchLikedTweets() {
+    var tweets = [Tweet]()
+    // Fetch tweet ids
+    FS.users.collection().document(user.id).collection("user-likes").getDocuments { snapshot, error in
+      guard let documents = snapshot?.documents else { return }
+      let tweetIds = documents.map { $0.documentID }
+      // fetch tweet for id
+      tweetIds.forEach { id in
+        FS.tweets.collection().document(id).getDocument { snapshot, error in
+          guard let data = snapshot?.data() else { return }
+          let tweet = Tweet(dictionary: data)
+          tweets.append(tweet)
+          guard tweets.count == tweetIds.count else { return }
+          self.likedTweets = tweets
+        }
+      }
     }
   }
   
