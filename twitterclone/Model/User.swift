@@ -14,6 +14,8 @@ struct User: Identifiable {
   let username: String
   let fullname: String
   let profileImageUrl: String
+  var stats: UserStats
+  var isFollowed = false
   
   var isCurrentUser: Bool {
     Auth.auth().currentUser?.uid == self.id
@@ -25,6 +27,7 @@ struct User: Identifiable {
     self.username = dictionary["username"] as? String ?? ""
     self.fullname = dictionary["fullname"] as? String ?? ""
     self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
+    self.stats = UserStats(followers: 0, following: 0)
   }
 }
 
@@ -36,3 +39,7 @@ let MOCK_USER = User(dictionary: [
   "profileImageUrl": "https://images.uncyclomedia.co/illogicopedia/en/thumb/8/89/Elon_musk.jpg/300px-Elon_musk.jpg"
 ])
 
+struct UserStats {
+  var followers: Int
+  var following: Int
+}

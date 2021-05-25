@@ -9,18 +9,43 @@ import SwiftUI
 import Firebase
 
 class ProfileViewModel: ObservableObject {
-  @Published var isFollowed = false
+  @Published var user: User
   @Published var userTweets = [Tweet]()
   @Published var likedTweets = [Tweet]()
-  let user: User
   
   init(user: User) {
     self.user = user
     checkIfUserIsFollowed()
     fetchUserTweets()
     fetchLikedTweets()
+    fetchUserStats()
   }
   
+  func tweets(by filterOption: TweetFilterOptions) -> [Tweet] {
+    switch(filterOption) {
+    case .tweets: return userTweets
+    case .likes: return likedTweets
+    }
+  }
+}
+
+enum TweetFilterOptions: Int, CaseIterable {
+  case tweets
+  //case replies
+  case likes
+  
+  var title: String {
+    switch self {
+    // User Tweets
+    case .tweets: return "Tweets"
+    // Liked Tweets
+    case .likes: return "Likes"
+    }
+  }
+}
+
+// MARK: - API Calls
+extension ProfileViewModel {
   func getCurrentUid() -> String? {
     return Auth.auth().currentUser?.uid
   }
@@ -42,7 +67,7 @@ class ProfileViewModel: ObservableObject {
     followingRef(id: currentUid).document(self.user.id).setData([:]) { _ in
       // Add current user to followee's "user-followers" collection
       self.followersRef().document(currentUid).setData([:]) { _ in
-        self.isFollowed = true
+        self.user.isFollowed = true
       }
     }
   }
@@ -54,18 +79,23 @@ class ProfileViewModel: ObservableObject {
     followingRef(id: currentUid).document(self.user.id).delete() { _ in
       // Remove current user from followee's "user-followers" collection
       self.followersRef().document(currentUid).delete() { _ in
-        self.isFollowed = false
+        self.user.isFollowed = false
       }
     }
   }
   
   /// Checks Firebase to see if we are following a given user.
   func checkIfUserIsFollowed() {
+    // Don't run this for current user.
+    guard !user.isCurrentUser else { return }
     guard let currentUid = getCurrentUid() else { return }
     followingRef(id: currentUid).getDocuments { snapshot, _ in
-      guard let isFollowed = snapshot?.isEmpty else { return }
-      print("DEBUG: isFollowed?: \(isFollowed)")
-      self.isFollowed = isFollowed
+      if let snapshot = snapshot {
+        if snapshot.isEmpty { return }
+        self.user.isFollowed = snapshot.documents.filter {
+          $0.documentID == self.user.id
+        }.count > 0
+      }
     }
   }
   
@@ -91,6 +121,19 @@ class ProfileViewModel: ObservableObject {
           guard tweets.count == tweetIds.count else { return }
           self.likedTweets = tweets
         }
+      }
+    }
+  }
+  
+  func fetchUserStats() {
+    let followersRef = FS.followers.collection().document(user.id).collection("user-followers")
+    let followingRef = FS.following.collection().document(user.id).collection("user-following")
+    
+    followersRef.getDocuments { snapshot, error in
+      let followersCount = snapshot?.documents.count ?? 0
+      followingRef.getDocuments { snapshot, error in
+        let followingCount = snapshot?.documents.count ?? 0
+        self.user.stats = UserStats(followers: followersCount, following: followingCount)
       }
     }
   }

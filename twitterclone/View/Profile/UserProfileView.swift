@@ -20,22 +20,14 @@ struct UserProfileView: View {
   var body: some View {
     ScrollView {
       VStack {
-        ProfileHeaderView(viewModel: viewModel, isFollowed: $viewModel.isFollowed)
+        ProfileHeaderView(viewModel: viewModel)
         FilterButtonView(selectedOption: $selectedFilter)
       }
       
-      ForEach(tweets(by: selectedFilter)) { tweet in
+      ForEach(viewModel.tweets(by: selectedFilter)) { tweet in
         TweetCell(tweet: tweet)
       }
-      
       .navigationTitle(user.username)
-    }
-  }
-  
-  func tweets(by filterOption: TweetFilterOptions) -> [Tweet] {
-    switch(filterOption) {
-    case .tweets: return viewModel.userTweets
-    case .likes: return viewModel.likedTweets
     }
   }
 }

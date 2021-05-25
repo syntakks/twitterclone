@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ProfileActionButtonView: View {
-  let viewModel: ProfileViewModel
-  @Binding var isFollowed: Bool
+  @ObservedObject var viewModel: ProfileViewModel
   
   var body: some View {
     if viewModel.user.isCurrentUser {
@@ -18,24 +17,26 @@ struct ProfileActionButtonView: View {
     } else {
       HStack {
         Button(
-          isFollowed ? "Following" : "Follow",
+          viewModel.user.isFollowed ? "Following" : "Follow",
           action: {
-          isFollowed ? viewModel.unfollow() : viewModel.follow()
-        })
-        .buttonStyle(FollowButtonStyle())
+            viewModel.user.isFollowed ? viewModel.unfollow() : viewModel.follow()
+          })
+          .buttonStyle(FollowButtonStyle())
         
-        Button("Message", action: {})
-          .buttonStyle(MessageButtonStyle())
+        NavigationLink(
+          destination: ChatView()) {
+          Text("Message")
+            .messageButtonTextStyle()
+        }
       }
     }
-    
   }
 }
 
 struct ProfileActionButtonView_Previews: PreviewProvider {
   static var previews: some View {
     VStack {
-      ProfileActionButtonView(viewModel: ProfileViewModel(user: MOCK_USER), isFollowed: .constant(false))
+      ProfileActionButtonView(viewModel: ProfileViewModel(user: MOCK_USER))
     }
   }
 }

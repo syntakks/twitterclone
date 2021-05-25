@@ -15,7 +15,7 @@ struct SearchView: View {
     ScrollView {
       SearchBar(text: $searchText)
       LazyVStack(alignment: .leading) {
-        ForEach(viewModel.users) { user in
+        ForEach(getUsers()) { user in
           NavigationLink(
             destination: LazyView(UserProfileView(user: user)),
             label: {
@@ -25,6 +25,10 @@ struct SearchView: View {
       }
       Spacer()
     }
+  }
+  
+  func getUsers() -> [User] {
+    searchText.isEmpty ? viewModel.users : viewModel.filteredUsers(searchText)
   }
 }
 

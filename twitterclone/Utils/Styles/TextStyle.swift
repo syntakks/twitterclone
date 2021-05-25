@@ -16,6 +16,14 @@ extension Text {
       .textCase(.uppercase)
   }
   
+  func messageButtonTextStyle() -> some View {
+    self
+      .frame(width: 180, height: 40)
+      .background(Color.purple)
+      .foregroundColor(.white)
+      .cornerRadius(20)
+  }
+  
   func schemeStyle(colorScheme: ColorScheme) -> some View {
     self
       .foregroundColor(colorScheme == .dark ? .white : .black)
