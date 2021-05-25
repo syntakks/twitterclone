@@ -24,7 +24,7 @@ struct ProfileActionButtonView: View {
           .buttonStyle(FollowButtonStyle())
         
         NavigationLink(
-          destination: ChatView()) {
+          destination: ChatView(user: viewModel.user)) {
           Text("Message")
             .messageButtonTextStyle()
         }
