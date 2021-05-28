@@ -6,28 +6,27 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MessageView: View {
   @Environment(\.colorScheme) var colorScheme
-  let message: MockMessage
+  let message: Message
+  
   
   var body: some View {
     HStack(alignment: .bottom) {
-      if message.isCurrentUser {
+      if message.isFromCurrentUser {
         Spacer()
       } else {
-        Image(message.imageName)
-          .resizable()
-          .scaledToFill()
-          .clipped()
-          .frame(width: 40, height: 40)
-          .clipShape(Circle())
+        KFImage.url(URL(string: message.user.profileImageUrl)!)
+          .circleImageStyle(size: 40, colorScheme: colorScheme)
       }
-      Text(message.messageText)
+      Text(message.text)
         .padding()
-        .background(message.isCurrentUser ? Color.blue : Color(.systemGray5))
-        .clipShape(ChatBubbleShape(isFromCurrentUser: message.isCurrentUser))
-        .foregroundColor(message.isCurrentUser ? .white : colorScheme == .dark ? .white : .black)
+        .background(message.isFromCurrentUser ? Color.blue : Color(.systemGray5))
+        .clipShape(ChatBubbleShape(isFromCurrentUser: message.isFromCurrentUser))
+        .foregroundColor(message.isFromCurrentUser ? .white : colorScheme == .dark ? .white : .black)
+        .padding(message.isFromCurrentUser ? .leading : .trailing, message.isFromCurrentUser ? CGFloat(100) : CGFloat(50))
     }
     .padding(.leading, 8)
     .padding(.trailing, 12)
@@ -36,6 +35,6 @@ struct MessageView: View {
 
 struct ChatBubble_Previews: PreviewProvider {
     static var previews: some View {
-      MessageView(message: MOCK_MESSAGES[0])
+      MessageView(message: MOCK_MESSAGE)
     }
 }

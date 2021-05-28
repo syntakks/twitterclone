@@ -8,14 +8,38 @@
 import SwiftUI
 import Firebase
 
-struct ChatViewModel {
+class ChatViewModel: ObservableObject {
   let user: User
+  @Published var messages = [Message]()
   
-  func fetchMessages() {
-    
+  init(user: User) {
+    self.user = user
+    fetchMessages()
   }
   
-  func sendMessage(_ messageText: String, to user: User) {
+  func fetchMessages() {
+    guard let uid = AuthViewModel.shared.userSession?.uid else { return }
+    let query = FS.messages.collection().document(uid).collection(user.id)
+    
+    query.addSnapshotListener { snapshot, error in
+      guard let changes = snapshot?.documentChanges else { return }
+      
+      changes.forEach { change in
+        let messageData = change.document.data()
+        guard let fromId = messageData["fromId"] as? String else { return }
+        
+        FS.users.collection().document(fromId).getDocument { snapshot, error in
+          guard let data = snapshot?.data() else { return }
+          let user = User(dictionary: data)
+          
+          self.messages.append(Message(user: user, dictionary: messageData))
+          self.messages.sort { $0.timestamp.dateValue() < $1.timestamp.dateValue() }
+        }
+      }
+    }
+  }
+  
+  func sendMessage(_ messageText: String) {
     guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }
     let currentUserRef = FS.messages.collection().document(currentUid).collection(user.id).document()
     let messageID = currentUserRef.documentID

@@ -5,7 +5,43 @@
 //  Created by Steve Wall on 5/17/21.
 //
 
-import Foundation
+import Firebase
+
+struct Message: Identifiable, Hashable {
+  
+  static func == (lhs: Message, rhs: Message) -> Bool {
+    lhs.id == rhs.id
+  }
+  
+  let text: String
+  let user: User
+  let toId: String
+  let fromId: String
+  let isFromCurrentUser: Bool
+  let timestamp: Timestamp
+  let id: String
+  
+  var chatPartnerId: String { return isFromCurrentUser ? toId : fromId }
+  
+  init(user: User, dictionary: [String: Any]) {
+    self.user = user
+    
+    self.text = dictionary["text"] as? String ?? ""
+    self.toId = dictionary["toId"] as? String ?? ""
+    self.fromId = dictionary["fromId"] as? String ?? ""
+    self.isFromCurrentUser = fromId == Auth.auth().currentUser?.uid
+    self.timestamp = dictionary["timestamp"] as? Timestamp ?? Timestamp(date: Date())
+    self.id = dictionary["id"] as? String ?? ""
+  }
+}
+
+let MOCK_MESSAGE = Message(user: MOCK_USER, dictionary: [
+  "text": "Hey this is a test message",
+  "toId": "a;sldkfja;slkdjf",
+  "fromId": ";aldksjf;alksjdf",
+  "timestamp": "",
+  "id": "qwerty"
+])
 
 struct MockMessage: Identifiable {
   let id: Int

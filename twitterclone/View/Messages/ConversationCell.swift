@@ -6,26 +6,24 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ConversationCell: View {
   @Environment(\.colorScheme) var colorScheme
+  var user: User
+  var message: Message
   
     var body: some View {
       VStack(alignment: .leading) {
         HStack(spacing: 16) {
-          Image("venom")
-            .resizable()
-            .scaledToFill()
-            .clipped()
-            .frame(width: 56, height: 56)
-            .clipShape(Circle())
-            .padding(.leading)
+          KFImage.url(URL(string: user.profileImageUrl)!)
+            .circleImageStyle(size: 56, colorScheme: colorScheme)
           
           VStack(alignment: .leading, spacing: 4) {
-            Text("venom")
+            Text(user.username)
               .font(.system(size: 14, weight: .semibold))
             
-            Text("Longer message text to see what happens when I do this...")
+            Text(message.text)
               .font(.system(size: 14))
               .lineLimit(2)
               .fixedSize(horizontal: false, vertical: true)
@@ -41,6 +39,6 @@ struct ConversationCell: View {
 
 struct ConversationCell_Previews: PreviewProvider {
     static var previews: some View {
-        ConversationCell()
+      ConversationCell(user: MOCK_USER, message: MOCK_MESSAGE)
     }
 }
