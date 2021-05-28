@@ -37,7 +37,7 @@ struct TweetStatsView: View {
   
   var body: some View {
     VStack(alignment: .leading) {
-      Text("7:22 PM • 05/23/2021")
+      Text(tweet.detailedTimestampString)
         .font(.system(size: 14))
         .foregroundColor(.gray)
       Divider()

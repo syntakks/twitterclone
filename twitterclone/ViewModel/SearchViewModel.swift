@@ -8,17 +8,30 @@
 import Foundation
 import Firebase
 
+enum SearchConfig {
+  case search
+  case newMessage
+}
+
 class SearchViewModel: ObservableObject {
   @Published var users = [User]()
+  private let config: SearchConfig
   
-  init() {
-    fetchUsers()
+  init(config: SearchConfig) {
+    self.config = config
+    fetchUsers(forConfig: config)
   }
   
-  func fetchUsers() {
+  func fetchUsers(forConfig config: SearchConfig) {
     FS.users.collection().getDocuments { snapshot, error in
       guard let documents = snapshot?.documents else { return }
-      self.users = documents.map { User(dictionary: $0.data()) }
+      let users = documents.map { User(dictionary: $0.data()) }
+      switch config {
+      case .newMessage:
+        self.users = users.filter { !$0.isCurrentUser }
+      case.search:
+        self.users = users
+      }
     }
   }
   

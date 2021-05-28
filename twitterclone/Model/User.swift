@@ -8,7 +8,12 @@
 import Firebase
 import Kingfisher
 
-struct User: Identifiable {
+struct User: Identifiable, Hashable {
+  
+  static func == (lhs: User, rhs: User) -> Bool {
+    lhs.id == rhs.id
+  }
+  
   let id: String
   let email: String
   let username: String
@@ -39,7 +44,7 @@ let MOCK_USER = User(dictionary: [
   "profileImageUrl": "https://images.uncyclomedia.co/illogicopedia/en/thumb/8/89/Elon_musk.jpg/300px-Elon_musk.jpg"
 ])
 
-struct UserStats {
+struct UserStats: Hashable {
   var followers: Int
   var following: Int
 }

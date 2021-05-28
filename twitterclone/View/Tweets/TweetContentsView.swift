@@ -23,7 +23,7 @@ struct TweetContentsView: View {
             .font(.system(size: 14, weight: .semibold))
           Group {
             Text("@\(tweet.username) •")
-            Text("2w")
+            Text(tweet.timestampString)
           }
           .foregroundColor(.gray)
         }
